@@ -1,0 +1,18 @@
+////////////////////////////////////////////////////////////////////////
+// Copyright(c) 1999-2015, All Rights Reserved
+// Author: 	@author
+// Created: 	@date
+// Describe: 	Specailized SQL structure of table @tblname, 
+//				generate by genSsqls.py, !!!DO NOT EDIT!!!
+////////////////////////////////////////////////////////////////////////
+#ifndef _@tblname_upper_DATA_H_
+#define _@tblname_upper_DATA_H_
+
+#include <mysql++.h>
+#include <ssqls.h>
+
+using namespace mysqlpp;
+
+@content
+
+#endif	//end of define _@tblname_upper_DATA_H_

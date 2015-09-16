@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{34986AA1-A6A3-4C09-BA68-538B0B97CA6C}</ProjectGuid>
+    <RootNamespace>Ozcollide</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Lib\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Output\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>./;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>OZCOLLIDE_PCH;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_WINDOWS;_MBCS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="aabbtree.cpp" />
+    <ClCompile Include="aabbtreeaabb_builder.cpp" />
+    <ClCompile Include="aabbtreepoly_builder.cpp" />
+    <ClCompile Include="aabbtreesphere_builder.cpp" />
+    <ClCompile Include="aabbtree_aabb.cpp" />
+    <ClCompile Include="aabbtree_poly.cpp" />
+    <ClCompile Include="aabbtree_sphere.cpp" />
+    <ClCompile Include="box.cpp" />
+    <ClCompile Include="dataio.cpp" />
+    <ClCompile Include="dist_pointbox.cpp" />
+    <ClCompile Include="dist_pointline.cpp" />
+    <ClCompile Include="ellipsoid.cpp" />
+    <ClCompile Include="frustum.cpp" />
+    <ClCompile Include="intr_boxbox.cpp" />
+    <ClCompile Include="intr_frustumsphere.cpp" />
+    <ClCompile Include="intr_linebox.cpp" />
+    <ClCompile Include="intr_lineline.cpp" />
+    <ClCompile Include="intr_segmenttri.cpp" />
+    <ClCompile Include="intr_spherebox.cpp" />
+    <ClCompile Include="intr_sphereline.cpp" />
+    <ClCompile Include="intr_spheretri.cpp" />
+    <ClCompile Include="intr_tribox.cpp" />
+    <ClCompile Include="intr_tripoint.cpp" />
+    <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="obb.cpp" />
+    <ClCompile Include="ozcollide.cpp" />
+    <ClCompile Include="plane.cpp" />
+    <ClCompile Include="polygon.cpp" />
+    <ClCompile Include="sphere.cpp" />
+    <ClCompile Include="vec2f.cpp" />
+    <ClCompile Include="vec3f.cpp" />
+    <ClCompile Include="vector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ozcollide\aabbtree.h" />
+    <ClInclude Include="ozcollide\aabbtreeaabb_builder.h" />
+    <ClInclude Include="ozcollide\aabbtreepoly_builder.h" />
+    <ClInclude Include="ozcollide\aabbtreesphere_builder.h" />
+    <ClInclude Include="ozcollide\aabbtree_aabb.h" />
+    <ClInclude Include="ozcollide\aabbtree_poly.h" />
+    <ClInclude Include="ozcollide\aabbtree_sphere.h" />
+    <ClInclude Include="ozcollide\box.h" />
+    <ClInclude Include="ozcollide\dataio.h" />
+    <ClInclude Include="ozcollide\dist_pointbox.h" />
+    <ClInclude Include="ozcollide\dist_pointline.h" />
+    <ClInclude Include="ozcollide\ellipsoid.h" />
+    <ClInclude Include="ozcollide\frustum.h" />
+    <ClInclude Include="ozcollide\intr_boxbox.h" />
+    <ClInclude Include="ozcollide\intr_frustumsphere.h" />
+    <ClInclude Include="ozcollide\intr_linebox.h" />
+    <ClInclude Include="ozcollide\intr_lineline.h" />
+    <ClInclude Include="ozcollide\intr_segmenttri.h" />
+    <ClInclude Include="ozcollide\intr_spherebox.h" />
+    <ClInclude Include="ozcollide\intr_sphereline.h" />
+    <ClInclude Include="ozcollide\intr_spheretri.h" />
+    <ClInclude Include="ozcollide\intr_tribox.h" />
+    <ClInclude Include="ozcollide\intr_tripoint.h" />
+    <ClInclude Include="ozcollide\matrix.h" />
+    <ClInclude Include="ozcollide\monitor.h" />
+    <ClInclude Include="ozcollide\obb.h" />
+    <ClInclude Include="ozcollide\ozcollide.h" />
+    <ClInclude Include="ozcollide\plane.h" />
+    <ClInclude Include="ozcollide\polygon.h" />
+    <ClInclude Include="ozcollide\sphere.h" />
+    <ClInclude Include="ozcollide\vec2f.h" />
+    <ClInclude Include="ozcollide\vec3f.h" />
+    <ClInclude Include="ozcollide\vector.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+message CRoleSummary
+{
+	required uint64 idRole = 1;
+	required string szName = 2;
+	optional uint32 idRoleType = 3;
+	optional uint32 nLevel = 4;
+}
+
+message CMsgRoleSelect
+{
+	optional uint64 idRoleSelected = 1;						//选择的角色
+	repeated CRoleSummary roles = 2;						//玩家已有角色列表，若为空，则需要新建角色
+}

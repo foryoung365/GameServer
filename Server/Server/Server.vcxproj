@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{126BDB4A-8237-4F82-BDEA-D80D86BF1EE3}</ProjectGuid>
+    <RootNamespace>Server</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\ServerEnv\</OutDir>
+    <IntDir>$(SolutionDir)Output\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>../ozcollide;../Shared/;../Shared/JuceLibraryCode/modules;../Shared/JuceLibraryCode;../../ThirdParty/ProtoBuf/include;../RakNet;./network;../../ThirdParty/Mysqlpp/include;../../ThirdParty/MySQL/include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4244;4267;4204;4512</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\Lib\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ozcollide_$(Configuration).lib;Shared_$(Configuration).lib;libprotobuf-lite.lib;RakNet_$(Configuration).lib;libzmq.lib;libmysql.lib;mysqlpp_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
+    </Link>
+    <PreBuildEvent>
+      <Command>::del $(ProjectDir)Network\*.pb.* /F/Q
+for %%i in ($(ProjectDir)Proto\*.proto) do ($(SolutionDir)Tools\ProtoBuf\protoc.exe --proto_path=$(ProjectDir)Proto\ --cpp_out=$(ProjectDir)Network\ %%i)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AccountSocketKernel.cpp" />
+    <ClCompile Include="BasicDataSet.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="DatabaseKernel.cpp" />
+    <ClCompile Include="DbData.cpp" />
+    <ClCompile Include="DbJob.cpp" />
+    <ClCompile Include="GameConfig.cpp" />
+    <ClCompile Include="GameKernel.cpp" />
+    <ClCompile Include="GameServer.cpp" />
+    <ClCompile Include="Kernel.cpp" />
+    <ClCompile Include="LoginKernel.cpp" />
+    <ClCompile Include="Magic.cpp" />
+    <ClCompile Include="MagicSet.cpp" />
+    <ClCompile Include="MagicTargetCollector.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MemRecordset.cpp" />
+    <ClCompile Include="MoveAction.cpp" />
+    <ClCompile Include="MoveList.cpp" />
+    <ClCompile Include="MsgCommonHandler.cpp" />
+    <ClCompile Include="MsgConnectHandler.cpp" />
+    <ClCompile Include="MsgErrorHandler.cpp" />
+    <ClCompile Include="MsgHandler.cpp" />
+    <ClCompile Include="MsgInprocHandler.cpp" />
+    <ClCompile Include="MsgLoginStepHandler.cpp" />
+    <ClCompile Include="MsgRoleSelectHandler.cpp" />
+    <ClCompile Include="MsgMoveHandler.cpp" />
+    <ClCompile Include="NavigationSystem.cpp" />
+    <ClCompile Include="Network\MsgCommon.pb.cc" />
+    <ClCompile Include="Network\MsgConnect.pb.cc" />
+    <ClCompile Include="Network\MsgError.pb.cc" />
+    <ClCompile Include="Network\MsgInproc.pb.cc" />
+    <ClCompile Include="Network\MsgLoginStep.pb.cc" />
+    <ClCompile Include="Network\MsgMove.pb.cc" />
+    <ClCompile Include="Network\MsgNetwork.pb.cc" />
+    <ClCompile Include="Network\MsgRoleInfo.pb.cc" />
+    <ClCompile Include="Network\MsgRoleSelect.pb.cc" />
+    <ClCompile Include="Octree.cpp" />
+    <ClCompile Include="Region.cpp" />
+    <ClCompile Include="Role.cpp" />
+    <ClCompile Include="RoleMgr.cpp" />
+    <ClCompile Include="RoleTypeSet.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="SceneMovable.cpp" />
+    <ClCompile Include="SceneObject.cpp" />
+    <ClCompile Include="SceneStatic.cpp" />
+    <ClCompile Include="ServerSocketKernel.cpp" />
+    <ClCompile Include="UserMagic.cpp" />
+    <ClCompile Include="UserMgr.cpp" />
+    <ClCompile Include="User.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccountSocketKernel.h" />
+    <ClInclude Include="BasicDataSet.h" />
+    <ClInclude Include="BasicTypeDef.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="ConfigData.h" />
+    <ClInclude Include="DatabaseKernel.h" />
+    <ClInclude Include="DbJob.h" />
+    <ClInclude Include="DbTableDef.h" />
+    <ClInclude Include="GameConfig.h" />
+    <ClInclude Include="GameKernel.h" />
+    <ClInclude Include="GameServer.h" />
+    <ClInclude Include="GameServerDef.h" />
+    <ClInclude Include="Kernel.h" />
+    <ClInclude Include="KernelDef.h" />
+    <ClInclude Include="LoginKernel.h" />
+    <ClInclude Include="Magic.h" />
+    <ClInclude Include="MagicData.h" />
+    <ClInclude Include="MagicDef.h" />
+    <ClInclude Include="MagicSet.h" />
+    <ClInclude Include="MagicTargetCollector.h" />
+    <ClInclude Include="MagicTypeData.h" />
+    <ClInclude Include="MemRecordset.h" />
+    <ClInclude Include="MoveAction.h" />
+    <ClInclude Include="MoveList.h" />
+    <ClInclude Include="MsgCommonHandler.h" />
+    <ClInclude Include="MsgConnectHandler.h" />
+    <ClInclude Include="MsgErrorHandler.h" />
+    <ClInclude Include="MsgHandler.h" />
+    <ClInclude Include="MsgInprocHandler.h" />
+    <ClInclude Include="MsgLoginStepHandler.h" />
+    <ClInclude Include="MsgRoleSelectHandler.h" />
+    <ClInclude Include="MsgMoveHandler.h" />
+    <ClInclude Include="NavigationSystem.h" />
+    <ClInclude Include="Network\MsgCommon.pb.h" />
+    <ClInclude Include="Network\MsgConnect.pb.h" />
+    <ClInclude Include="Network\MsgError.pb.h" />
+    <ClInclude Include="Network\MsgInproc.pb.h" />
+    <ClInclude Include="Network\MsgLoginStep.pb.h" />
+    <ClInclude Include="Network\MsgMove.pb.h" />
+    <ClInclude Include="Network\MsgNetwork.pb.h" />
+    <ClInclude Include="Network\MsgRoleInfo.pb.h" />
+    <ClInclude Include="Network\MsgRoleSelect.pb.h" />
+    <ClInclude Include="Octree.h" />
+    <ClInclude Include="Region.h" />
+    <ClInclude Include="Role.h" />
+    <ClInclude Include="RoleMgr.h" />
+    <ClInclude Include="RoleTypeSet.h" />
+    <ClInclude Include="RoleTypeData.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneData.h" />
+    <ClInclude Include="SceneDef.h" />
+    <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="SceneMovable.h" />
+    <ClInclude Include="SceneObject.h" />
+    <ClInclude Include="SceneStatic.h" />
+    <ClInclude Include="ServerSocketKernel.h" />
+    <ClInclude Include="StatusTypeData.h" />
+    <ClInclude Include="StrDef.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UserData.h" />
+    <ClInclude Include="UserMagic.h" />
+    <ClInclude Include="UserMgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Proto\MsgCommon.proto" />
+    <None Include="Proto\MsgConnect.proto" />
+    <None Include="Proto\MsgError.proto" />
+    <None Include="Proto\MsgInproc.proto" />
+    <None Include="Proto\MsgLoginStep.proto" />
+    <None Include="Proto\MsgNetwork.proto" />
+    <None Include="Proto\MsgRoleSelect.proto" />
+    <None Include="Proto\MsgMove.proto" />
+    <None Include="Proto\MsgRoleInfo.proto" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

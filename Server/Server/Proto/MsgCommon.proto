@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+enum MSGCOMMON_ACTION 
+{
+	COMMONACT_NONE								= 0;
+
+}
+
+message CMsgCommon
+{
+	required int32 nAction = 1;
+	optional uint64 idRole = 2;
+	optional int64 nType = 3;
+	repeated int32 nDatas = 4;
+	repeated int64 n64Datas = 5;
+	repeated string strDatas = 6;
+}

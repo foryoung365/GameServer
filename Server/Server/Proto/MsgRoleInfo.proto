@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+enum MSG_ROLE_INFO_ACTION
+{
+	ROLEINFOACT_NONE						= 0; // 无效
+	ROLEINFOACT_SELF_NEW					= 1; // 登录时下发自己的角色信息
+	ROLEINFOACT_SELF_UPDATE				= 2; // 更新自己的角色信息
+	ROLEINFOACT_OTHER_NEW					= 3; // 创建其他角色信息
+	ROLEINFOACT_OTHER_UPDATE				= 4; // 更新其他角色信息
+	ROLEINFOACT_LEAVE_SCENE				= 5; // 离开场景
+}
+
+message CMsgRoleInfo
+{
+	required int32 nAction = 1;			//MSG_ROLE_INFO_ACTION
+	required uint64 idRole = 2;			//id
+	required uint32 nType = 3;			//角色类型，OBJECT_TYPE
+	optional string strName = 4;			//名字
+	optional uint32 idRoleType = 5;		//职业或者种类
+	optional int32 nLevel = 6;			//等级
+	optional int64 nExp = 7;				//经验值
+	optional float fPos_x = 8;			//X坐标
+	optional float fPos_y = 9;			//Y坐标
+	optional float fPos_z = 10;			//Z坐标
+	optional int32 nLife = 11;			//当前生命值
+	optional int32 nMaxLife = 12;		//最大生命值
+	optional int32 nMana = 13;			//当前法力值
+	optional int32 nMaxMana = 14;		//最大法力值
+
+	//玩家特有的字段范围1001-2000
+	optional uint32 idScene = 1001;
+
+	//怪物特有的字段范围2001-3000
+
+	//NPC特有的字段范围3001-4000
+}

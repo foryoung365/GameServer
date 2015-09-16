@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+//所有的错误提示都应该走这个消息
+
+enum MSG_ERROR_ACTION
+{
+	ERRACT_NONE					= 0;		//无效
+	ERRACT_LOGIN_FAILED			= 1;		//登录错误
+	ERRACT_REGISTER_FAILED		= 2;		//新建角色错误	
+}
+
+message CMsgError
+{
+	required int32 nAction = 1;
+	optional int32 nErrorCode = 2;			//错误代码
+	optional string strReason = 3;			//错误原因
+}

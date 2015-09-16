@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+enum MSG_LOGIN_STEP_ACTION
+{
+	LOGINSTEPACT_NONE						= 0; //无效
+	LOGINSTEPACT_ENTER_SCENE				= 1; //进入场景
+
+
+
+	LOGINSTEPACT_LOGIN_OK					= 100;//登录完成
+}
+
+message CMsgLoginStep
+{
+	required int32 nAction = 1;
+}

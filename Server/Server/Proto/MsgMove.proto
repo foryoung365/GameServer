@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+enum MSG_MOVE_ACTION
+{
+	MOVEACT_NONE						= 0;	//无效
+	MOVEACT_WALK						= 1;	//移动
+	MOVEACT_JUMP						= 2;	//跳跃
+	MOVEACT_TELEPORT					= 3;	//传送
+}
+
+message CMsgMove
+{
+	required int32 nAction = 1;
+	optional uint64 idRole = 2;
+	optional float fStartX = 3;
+	optional float fStartY = 4;
+	optional float fStartZ = 5;
+	optional float fEndX = 6;
+	optional float fEndY = 7;
+	optional float fEndz = 8;
+	optional int64 tStartTime = 9;
+	optional int64 tEndTime = 10;
+	optional float fVelecity = 11;
+}

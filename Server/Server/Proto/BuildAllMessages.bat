@@ -1,0 +1,1 @@
+for %%i in (*.proto) do (..\..\Tools\ProtoBuf\protoc.exe --proto_path=.\ --cpp_out=..\Network\ %%i)

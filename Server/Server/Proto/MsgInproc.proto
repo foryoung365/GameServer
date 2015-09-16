@@ -1,0 +1,42 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+enum INPROC_ACTION
+{
+	INPROCACT_NONE							= 0;	//无效
+
+	INPROCACT_SS_BEGIN					= 1;		//ServerSocketKernel处理的消息开始
+	INPROCACT_SS_USER_LOGIN_TO_GAME		= 2;		//玩家登录到GameKernel
+	INPROCACT_SS_CLOSE_CONNECTION		= 3;		//关闭连接
+	INPROCACT_SS_END						= 10000;	//ServerSocketKernel处理的消息结束
+
+	INPROCACT_LOGIN_BEGIN					= 10001;	//LoginKernel处理的消息开始
+
+	INPROCACT_LOGIN_END					= 20000;	//LoginKernel处理的消息结束
+
+	INRPOCACT_DB_BEGIN					= 20001;	//DbKernel处理的消息开始
+	INPROCACT_DB_LOAD_USER				= 20002;	//请求DbKernel加载玩家数据, idRole = idUser
+
+	INRPOCACT_DB_END						= 30000;	//DbKernel处理的消息结束
+
+	INPROCACT_GAME_BEGIN					= 30001;	//GameKernel处理的消息开始
+	INPROCACT_GAME_LOAD_USER_FINISHED	= 30002;	//玩家数据加载完成
+	INPROCACT_GAME_USER_REQUEST_LOGIN	= 30003;	//玩家请求登录
+	INPROCACT_GAME_USER_DISCONNECTED	= 30004;	//玩家断开连接
+	INPROCACT_GAME_TEST_CMD				= 30005;	//PM命令
+	INPROCACT_GAME_END					= 40000;	//GameKernel处理的消息结束
+
+	INPROCACT_AS_BEGIN					= 40001;	//AccountSocketKernel处理的消息开始
+	INPROCACT_AS_END						= 40002;	//AccountSocketKernel处理的消息结束
+}
+
+message CMsgInproc
+{
+	required INPROC_ACTION nAction = 1;
+	optional uint64 idRole = 2;
+	repeated uint32 u32Data = 3;
+	repeated uint64 u64Data = 4;
+	repeated float fData = 5;
+	repeated string strData = 6;
+}

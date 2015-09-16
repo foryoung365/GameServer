@@ -1,0 +1,10 @@
+////////////////////////////////////////////////////////////////////////
+// Copyright(c) 1999-2015, All Rights Reserved
+// Author: 	@author
+// Created: 	@date
+// Describe: 	Specailized SQL structure's static member definition of all table, 
+//				generate by genSsqls.py, !!!DO NOT EDIT!!!
+////////////////////////////////////////////////////////////////////////
+@include
+
+@content

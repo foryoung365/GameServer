@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Octree.cpp">
+      <Filter>GameKernel\Octree</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>GameKernel\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveAction.cpp">
+      <Filter>GameKernel\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveList.cpp">
+      <Filter>GameKernel\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject.cpp">
+      <Filter>GameKernel\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMovable.cpp">
+      <Filter>GameKernel\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Region.cpp">
+      <Filter>GameKernel\Region</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgNetwork.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>GameKernel\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgHandler.cpp">
+      <Filter>MsgHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="GameServer.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgConnect.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgConnectHandler.cpp">
+      <Filter>MsgHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>ServerSocketKernel\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Role.cpp">
+      <Filter>GameKernel\Role</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStatic.cpp">
+      <Filter>GameKernel\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgRoleSelect.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgRoleSelectHandler.cpp">
+      <Filter>MsgHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseKernel.cpp">
+      <Filter>DatabaseKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountSocketKernel.cpp">
+      <Filter>AccountSocketKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerSocketKernel.cpp">
+      <Filter>ServerSocketKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginKernel.cpp">
+      <Filter>LoginKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="GameKernel.cpp">
+      <Filter>GameKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="DbJob.cpp">
+      <Filter>DatabaseKernel\DbJob</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgInproc.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgInprocHandler.cpp">
+      <Filter>MsgHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="GameConfig.cpp">
+      <Filter>GameKernel\GameConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>GameKernel\User</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgMoveHandler.cpp">
+      <Filter>MsgHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgMove.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="RoleTypeSet.cpp">
+      <Filter>GameKernel\RoleType</Filter>
+    </ClCompile>
+    <ClCompile Include="MemRecordset.cpp">
+      <Filter>GameKernel\MemRecordset</Filter>
+    </ClCompile>
+    <ClCompile Include="UserMgr.cpp">
+      <Filter>GameKernel\UserMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="DbData.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgError.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgErrorHandler.cpp">
+      <Filter>MsgHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgLoginStep.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgLoginStepHandler.cpp">
+      <Filter>MsgHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigationSystem.cpp">
+      <Filter>GameKernel\NavigationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgRoleInfo.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicDataSet.cpp">
+      <Filter>GameKernel\BasicDataSet</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicSet.cpp">
+      <Filter>GameKernel\Magic</Filter>
+    </ClCompile>
+    <ClCompile Include="Magic.cpp">
+      <Filter>GameKernel\Magic</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgCommon.pb.cc">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgCommonHandler.cpp">
+      <Filter>MsgHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="UserMagic.cpp">
+      <Filter>GameKernel\Magic</Filter>
+    </ClCompile>
+    <ClCompile Include="RoleMgr.cpp">
+      <Filter>GameKernel\Role</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicTargetCollector.cpp">
+      <Filter>GameKernel\Magic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Octree.h">
+      <Filter>GameKernel\Octree</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>GameKernel\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDef.h">
+      <Filter>GameKernel\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveAction.h">
+      <Filter>GameKernel\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveList.h">
+      <Filter>GameKernel\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject.h">
+      <Filter>GameKernel\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMovable.h">
+      <Filter>GameKernel\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Region.h">
+      <Filter>GameKernel\Region</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgNetwork.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>GameKernel\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Kernel.h">
+      <Filter>Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelDef.h">
+      <Filter>Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgHandler.h">
+      <Filter>MsgHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="GameServer.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameServerDef.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgConnect.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgConnectHandler.h">
+      <Filter>MsgHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>ServerSocketKernel\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Role.h">
+      <Filter>GameKernel\Role</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStatic.h">
+      <Filter>GameKernel\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgRoleSelect.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgRoleSelectHandler.h">
+      <Filter>MsgHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseKernel.h">
+      <Filter>DatabaseKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountSocketKernel.h">
+      <Filter>AccountSocketKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerSocketKernel.h">
+      <Filter>ServerSocketKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginKernel.h">
+      <Filter>LoginKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="GameKernel.h">
+      <Filter>GameKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="DbJob.h">
+      <Filter>DatabaseKernel\DbJob</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgInproc.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgInprocHandler.h">
+      <Filter>MsgHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="DbTableDef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="GameConfig.h">
+      <Filter>GameKernel\GameConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigData.h">
+      <Filter>GameKernel\GameConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>GameKernel\User</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgMoveHandler.h">
+      <Filter>MsgHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgMove.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneData.h">
+      <Filter>GameKernel\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="RoleTypeSet.h">
+      <Filter>GameKernel\RoleType</Filter>
+    </ClInclude>
+    <ClInclude Include="RoleTypeData.h">
+      <Filter>GameKernel\RoleType</Filter>
+    </ClInclude>
+    <ClInclude Include="UserData.h">
+      <Filter>GameKernel\User</Filter>
+    </ClInclude>
+    <ClInclude Include="MemRecordset.h">
+      <Filter>GameKernel\MemRecordset</Filter>
+    </ClInclude>
+    <ClInclude Include="UserMgr.h">
+      <Filter>GameKernel\UserMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicTypeDef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgError.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgErrorHandler.h">
+      <Filter>MsgHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="StrDef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgLoginStep.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgLoginStepHandler.h">
+      <Filter>MsgHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigationSystem.h">
+      <Filter>GameKernel\NavigationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgRoleInfo.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicTypeData.h">
+      <Filter>GameKernel\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusTypeData.h">
+      <Filter>GameKernel\Status</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicDataSet.h">
+      <Filter>GameKernel\BasicDataSet</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicSet.h">
+      <Filter>GameKernel\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicData.h">
+      <Filter>GameKernel\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="Magic.h">
+      <Filter>GameKernel\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicDef.h">
+      <Filter>GameKernel\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgCommon.pb.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgCommonHandler.h">
+      <Filter>MsgHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="UserMagic.h">
+      <Filter>GameKernel\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="RoleMgr.h">
+      <Filter>GameKernel\Role</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicTargetCollector.h">
+      <Filter>GameKernel\Magic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Proto\MsgNetwork.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="Proto\MsgConnect.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="Proto\MsgRoleSelect.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="Proto\MsgInproc.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="Proto\MsgMove.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="Proto\MsgError.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="Proto\MsgLoginStep.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="Proto\MsgRoleInfo.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="Proto\MsgCommon.proto">
+      <Filter>Proto</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Network">
+      <UniqueIdentifier>{4b3e65c0-6c14-40cf-931b-965ba7d7d947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Proto">
+      <UniqueIdentifier>{70b9ab36-c605-4cd8-a416-1c3cb2af3a05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer">
+      <UniqueIdentifier>{27d5917d-64ab-45df-afcf-6147c81b6b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel">
+      <UniqueIdentifier>{7aa622d8-3a1e-482a-aea0-fafb82b003e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MsgHandler">
+      <UniqueIdentifier>{26a66ae9-90a6-4866-8dc5-9cf6a5c14407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DatabaseKernel">
+      <UniqueIdentifier>{728b1823-8cde-4c8e-98c1-b38dabe07787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AccountSocketKernel">
+      <UniqueIdentifier>{f705cf39-03eb-48e4-aaa9-163f88941bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerSocketKernel">
+      <UniqueIdentifier>{1e07c57f-4e26-46d9-9088-7bc0c492dd61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LoginKernel">
+      <UniqueIdentifier>{1e49c9a0-f7fb-477b-a19d-0af095e24889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel">
+      <UniqueIdentifier>{5268a0fe-63ba-46e1-ade8-e530a7720058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerSocketKernel\Client">
+      <UniqueIdentifier>{68083f34-a76a-4dc1-9ad6-6c88b5304578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\Movement">
+      <UniqueIdentifier>{a513cd52-07fb-4840-83a0-12cfbdbbc484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\Octree">
+      <UniqueIdentifier>{60919e18-3dcf-4f8f-a869-929853b2226a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\Region">
+      <UniqueIdentifier>{79aa131c-7458-4517-b28f-74dfe529311f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\Role">
+      <UniqueIdentifier>{ef08e005-5ffb-4a5d-99c7-e45009fbabda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\Scene">
+      <UniqueIdentifier>{ce6d82ee-b31f-4759-821d-64b07cf70930}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\SceneObject">
+      <UniqueIdentifier>{a04184bf-3053-48d8-81eb-8cb0676d6d45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DatabaseKernel\DbJob">
+      <UniqueIdentifier>{4513c649-7b89-44f1-afd7-7cab8c91f7a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\RoleType">
+      <UniqueIdentifier>{4008b5d8-dc98-4d87-9486-312c46907d6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{934d66de-15df-4431-95ec-d76c584f53bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\User">
+      <UniqueIdentifier>{190c4af2-71e2-45df-80d4-360529c89635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\GameConfig">
+      <UniqueIdentifier>{f11898de-a878-46bb-b536-7e7b643f20bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\MemRecordset">
+      <UniqueIdentifier>{109bfcf1-f596-4a8f-bae9-90dbd05fe1a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\UserMgr">
+      <UniqueIdentifier>{d6c8fdca-8970-4eaa-916e-658d9e70e3dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\NavigationSystem">
+      <UniqueIdentifier>{ab039876-057e-4b01-b481-af3c5f3e897c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\Magic">
+      <UniqueIdentifier>{82331ec0-9802-4b14-b34c-d3956f8e6139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\Status">
+      <UniqueIdentifier>{e5fd8d3b-2672-4ebf-bbaa-216b2211a8c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameKernel\BasicDataSet">
+      <UniqueIdentifier>{2f78c8de-4758-4ab8-a5a7-77f23e722d1f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,75 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+import "MsgMove.proto";
+import "MsgConnect.proto";
+import "MsgRoleSelect.proto";
+import "MsgInproc.proto";
+import "MsgError.proto";
+import "MsgRoleInfo.proto";
+import "MsgLoginStep.proto";
+import "MsgCommon.proto";
+
+//-----------------------------------------------------------------------------------------------
+//增加消息说明：
+//1.先确定一个对应的消息类型ID，如123456
+//2.在Proto目录下新建一个MsgXXX.proto，并添加到VS中Proto过滤器下
+//3.在MsgNetwork.proto中import MsgXXX.proto
+//4.在CMsgNetwork的RealMessage对应的消息段中新增你的消息。对应的tag就是前面指定的消息类型ID:123456
+//5.运行BuildAllMessages.bat生成所有消息文件
+//6.在VS中将新增的消息文件添加到Network过滤器下
+//7.在MsgHandler过滤器中添加MsgXXXHandler.h和MsgXXXHandler.cpp
+//8.继承IMsgHandler并仿造其他消息实现一个消息处理类
+//-----------------------------------------------------------------------------------------------
+
+//消息类型
+enum MESSAGE_TYPE
+{
+	MESSAGE_TYPE_NONE					= 0;		//无效类型
+	//---------------内部通信消息-----------------------
+	MESSAGE_TYPE_IPC_BEGIN				= 1;		//内部通信消息起始
+	
+	MESSAGE_TYPE_IPC_END				= 10000;	//内部通信消息结束
+	
+	//---------------账服通信消息-----------------------
+	MESSAGE_TYPE_AS_BEGIN				= 10001;	//账服通信消息起始
+	
+	MESSAGE_TYPE_AS_END					= 20000;	//账服通信消息结束
+	
+	//---------------世界服通信消息---------------------
+	MESSAGE_TYPE_WS_BEGIN				= 20001;	//世界服通信消息起始
+	
+	MESSAGE_TYPE_WS_END					= 30000;	//世界服通信消息结束
+	
+	//---------------游服通信消息-----------------------
+	MESSAGE_TYPE_GS_BEIGN				= 30001;	//游服通信消息起始
+	
+	MESSAGE_TYPE_GS_END					= 40000;	//游服通信消息结束
+}
+
+//在网络中传输的负载消息
+message CMsgNetwork
+{
+	oneof RealMessage
+	{
+	//---------------内部通信消息(1-10000)-----------------------
+		CMsgInproc msgInproc = 2;
+
+	//---------------账服通信消息(10001-20000)-----------------------
+
+	//---------------世界服通信消息(20001-30000)--------------------
+
+	//---------------游服通信消息(30001-40000)-----------------------
+		CMsgMove msgMove = 30002;
+		CMsgConnect msgConnect = 30003;
+		CMsgRoleSelect msgRoleSelect = 30004;
+		CMsgError msgError = 30005;
+		CMsgRoleInfo msgRoleInfo = 30006;
+		CMsgLoginStep msgLoginStep = 30007;
+		CMsgCommon msgCommon = 30008;
+	}
+	optional uint64 idSocket = 100000;
+	optional bool bBroadcast = 100001;
+	repeated uint64 idPeer = 100002;
+}
